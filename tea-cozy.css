@@ -1,0 +1,148 @@
+/* Message */
+
+/* Questo website è volontariamente non responsive. */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+    color: seashell;
+    background-color: black;
+    opacity: 0.9;
+
+}
+
+a {
+    color: seashell;
+}
+
+h2, h4 {
+    text-align: center;
+    background-color: black;
+}
+
+h3 {
+    text-align: center;
+}
+
+figcaption {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid seashell;
+    height: 69px;
+    padding: 0 10px;
+    background-color: black;
+}
+
+.logo-img {
+    display: inline-block;
+    /* border: 1px solid blue; */
+    height: 50px; 
+    margin-top: 8px;
+}
+
+ul {
+    display: inline-block;
+    float: right;
+    line-height: 68px;
+    margin-right: 10px;
+}
+
+ul li {
+    display: inline;
+    text-decoration: underline;
+    margin: 0 15px;
+}
+
+.container-cover {
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    margin: 69px auto;
+    height: 700px;
+    background-image: url('https://content.codecademy.com/courses/freelance-1/unit-4/img-mission-background.jpg?_gl=1*9v74ui*_ga*MTAzMzExOTc0OS4xNjY4NTk0Njcz*_ga_3LRZM6TM9L*MTY3MTYyODkwMy45LjEuMTY3MTYyODkxMS4wLjAuMA..');
+}
+
+.text-box {
+ width: 100%;;
+ line-height: 1.6;
+}
+
+.tea-photo {
+    /* border: 1px solid red; */
+    width: 1000px;
+    margin: 10px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-around;
+}
+
+.tea-photo img {
+    width: 300px;
+    height: 200px;
+    margin: 15px;
+}
+
+/* Location Section */
+
+.location {
+    width: 1200px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 69px auto 20px;
+    background-image: url('https://content.codecademy.com/courses/freelance-1/unit-4/img-locations-background.jpg?_gl=1*24dghz*_ga*MTAzMzExOTc0OS4xNjY4NTk0Njcz*_ga_3LRZM6TM9L*MTY3MTYyODkwMy45LjEuMTY3MTYyODkxMS4wLjAuMA..');
+    padding: 70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.location > h3 {font-size: 30px;}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    margin: 15px 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    opacity: 1;
+    text-align: center;
+}
+
+/* Footer */
+
+.contact {
+    height: 200px;
+    text-align: center;
+    line-height: 3;
+}
+
+.copyright {
+    margin: 50px 20px 15px;
+    float: left;
+}
