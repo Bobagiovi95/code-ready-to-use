@@ -1,3 +1,5 @@
+/* General */
+
 * {
   padding: 0;
   margin: 0;
@@ -6,6 +8,10 @@
 body {
   font-family: monospace;
   background-color: aliceblue;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 30px;
 }
 
 h1, h2, h3 {
@@ -14,16 +20,28 @@ h1, h2, h3 {
   text-align: center;
 }
 
+h2 {
+  font-size: 30px;
+}
+
+h2::after, h2::before {content: ' | ';}
+
 section {
   width: 90%;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid black;
   text-align: center;
   margin: 20px;
+  background-color: azure;
+  box-shadow: 1px 3px;
+}
+
+.flex {
+  
 }
 
 
@@ -43,6 +61,7 @@ section {
   margin: 20px;
   padding: 25px;
   box-shadow: 4px 4px;
+  flex-shrink: 1;
 }
 
 .color-name {}
@@ -60,6 +79,8 @@ section {
   border: 2px solid black;
   border-radius: 5px;
   padding: 20px 30px;
+  background-color: royalblue;
+  box-shadow: 2px -2px 12px yellow;
 }
 
 .breadcrumbs li {
@@ -150,6 +171,86 @@ code {
   color: #fff;
   background-color: #10162F;
   padding: 30px;
+}
+
+/* Grid */
+
+.container-grid {
+  border: 1px solid blue;
+  width: 100%;
+  height: 1000px;
+  display: grid;
+  margin: auto;
+  grid-template-areas: "header header"
+                       "nav nav"
+                       "left right"
+                       "footer footer";
+  grid-template-columns: 400px 200px;
+  grid-template-rows: repeat(4, 200px);
+  gap: 10px;
+  /* justify-items: start; // ogni items prenderà lo spazio necessario */
+  justify-content: center;
+  align-content: center;
+}
+
+.header-grid {
+  background-color: beige;
+  grid-area: header;
+}
+
+.nav-grid {
+  background-color: greenyellow;
+  grid-area: nav;
+}
+
+.div-grid-left {
+  background-color: #466995;
+  grid-area: left;
+}
+.div-grid-right {
+  background-color: aquamarine;
+  grid-area: right;
+}
+
+.footer-grid {
+  background-color: coral;
+  grid-area: footer;
+}
+
+
+/* Navbar */
+
+.header-github {
+  border: 1px solid red;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.search-bar {
+  border: 1px solid violet;
+  width: 20%;
+}
+
+.logo {
+  border: 1px solid blue;
+  
+}
+
+.notification{
+  border: 1px solid aquamarine;
+  width: 70px; // Quadrato
+}
+
+.git-nav li {
+  display: inline;
+}
+
+.user-menù {
+  border: 1px solid dodgerblue;
+  width: 70px;
 }
 
 /* Text */
