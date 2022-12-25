@@ -40,10 +40,6 @@ section {
   box-shadow: 1px 3px;
 }
 
-.flex {
-  
-}
-
 
 /* Color palette */
 
@@ -64,7 +60,7 @@ section {
   flex-shrink: 1;
 }
 
-.color-name {}
+.color-name
 .color-code {font-style: italic;}
 
 .lavender {background-color: lavender;}
@@ -241,7 +237,7 @@ code {
 
 .notification{
   border: 1px solid aquamarine;
-  width: 70px; // Quadrato
+  width: 70px;
 }
 
 .git-nav li {
