@@ -10,6 +10,7 @@
 
     <h1>Code Ready To Use!</h1>
 
+    <!-- Color -->
     <section>
       <h2>Color</h2>
       <div class="color-container">
@@ -44,6 +45,7 @@
       </div>
     </section>
 
+    <!-- Breadcrumbs Nav -->
     <section>
     <h2>Breadcrumbs Nav</h2>
 
@@ -55,6 +57,7 @@
       </ul>
     </section>
 
+    <!-- Button -->
     <section>
     <h2>Button</h2>
     
@@ -62,12 +65,102 @@
       <button type="button" name="button" id="flatStyle">Flat style</button>
     </section>
   
+    <!-- Code -->
       <section>
       <h2>Code</h2>
   
         <code>x = 32; console.log(x);</code>
         <h3>Comandi rapidi</h3>
         <code>Shift + alt + freccia > copia il codice su e giù</code>
+        
+        <blockquote>
+          È buona norma segnare i blockquote così!
+        </blockquote>
+
+      </section>
+
+      <!-- Form -->
+      <section>
+        <h2>Form</h2>
+
+        <form action="./dates.html" method="post" class="form-section-container">
+
+          <section class="form-section">
+            <label for="name">Name</label>
+            <input type="text" name="Name" id="name" placeholder="Mario Rossi" required>
+          </section>
+
+          <section class="form-section">
+            <label for="user-pw">Password</label>
+            <input type="password" name="user-pw" id="user-pw" minlength="5" maxlength="10" placeholder="5-10 characters." pattern="[a-zA-Z0-9]+">
+          </section>
+
+          <section class="form-section">
+            <label for="number">Number</label>
+            <input type="number" name="number" id="number" step="1" min="1" max="10" required>
+          </section>
+
+          <section class="form-section">
+            <label for="range">Quanto ti senti figo da 1 a 10?</label>
+            <br><br>
+            <span>Pochissimo</span>
+            <input type="range" name="range" id="range" min="0" max="10" step="1">
+            <span>Tantissimo</span>
+          </section>
+
+          <section class="form-section">
+            <span>What is your music job?</span>
+            <br><br>
+            <input type="checkbox" name="composer" id="composer" value="composer">
+            <label for="composer">Composer</label>
+            <br>
+            <input type="checkbox" name="tournist" id="tournist" value="tournist">
+            <label for="tournist">Tournist</label>
+            <br>
+            <input type="checkbox" name="sound-engineer" id="sound-engineer" value="sound-engineer">
+            <label for="sound-engineer">Sound Engineer</label>
+            <br>
+          </section>
+
+          <section class="form-section">
+            <span>Do you like music?</span>
+            <br><br>
+            <label for="yes">Yes</label>
+            <input type="radio" name="music" id="yes" value="yes">
+            <label for="no">No</label>
+            <input type="radio" name="music" id="no" value="no">
+            <br>
+          </section>
+
+          <section class="form-section">
+            <label for="select-instrument">Select your principal instrument:</label>
+            <select name="instrument" id="select-instrument">
+              <option value="guitar">Guitar</option>
+              <option value="piano">Piano</option>
+              <option value="ukulele">Ukulele</option>
+            </select>
+          </section>
+
+          <section class="form-section">
+            <label for="work-research">What work are you looking for?</label>
+            <input type="text" id="work-research" list="works" name="works-research">
+            <datalist id="works">
+              <option value="Sountracks"></option>
+              <option value="Live Music"></option>
+              <option value="Studio Recording"></option>
+              <option value="Transcrition"></option>
+            </datalist>
+          </section>
+
+          <section class="form-section">
+            <label for="user-comment">Write us a review!</label>
+            <br><br>
+            <textarea name="review" id="user-comment" cols="30" rows="3">Write here your comment!</textarea>
+          </section>
+
+            <input type="submit" style="padding: 5px 20px;">
+
+        </form>
       </section>
 
       <section>
