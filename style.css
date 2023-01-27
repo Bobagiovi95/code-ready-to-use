@@ -260,6 +260,13 @@ input {
   grid-area: footer;
 }
 
+.container-grid-two {
+  display: grid;
+  grid-template-columns: 33% 1fr 1fr;
+  gap: 1em;
+  padding: 2em;
+}
+
 
 /* Navbar */
 
