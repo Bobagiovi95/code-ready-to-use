@@ -1,11 +1,17 @@
+/* General Style*/
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
     --body-bg: hsl(0, 0%, 12%);
+    --background-a: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    --apple-color: #1d1d1f;
 }
 
 html {
@@ -20,20 +26,101 @@ body {
     margin: 0;
 }
 
-.site-title {
-    text-align: center;
-}
-
 section {
-    /* background: lightblue; */
     padding-block: 5rem;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Settare uno schema di griglia ci permette di risparmiare codice */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.span-12 {
+    grid-column: span 12;
+}
+
+/* Wrapper sta per 'confezione' è un container div */
 .wrapper {
     max-width: 50rem;
     margin-inline: auto;
     padding-inline: 1rem ;
 }
+
+/* Header */
+
+header {
+    height: 20vh;
+
+}
+
+.header-title {
+    text-align: center;
+    z-index: 999;
+    color: white;
+
+    position: relative;
+    
+    background: -webkit-linear-gradient(180deg, rgb(97, 221, 246), red, blue);
+    background-clip: text; /* Clip permette di definire dove si deve estendere il background*/ 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: clamp(2.5rem, 10vw + 0.5rem, 6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.hero-image {
+    position: absolute;
+    left: 0;
+    right: 0; 
+    top: 0;
+
+    width: 100%;
+    height: 40vh;
+
+    object-fit: cover;
+    
+   -webkit-mask-image: linear-gradient(
+    rgb(0 0 0 / 1),
+    rgb(0 0 0 / 0.5) 10%,
+    rgb(0 0 0 / 0)
+   );
+   mask-image: linear-gradient(black, transparent);
+}
+
+/* Pikachu Position */
+
+.pika-title {
+    display: inline-block;
+}
+
+.pika-image {
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    width: 100px;
+}
+
+.pika p {
+    background: linear-gradient(yellow, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+/* Diagonal Background */
+
 
 .diagonal {
     --skew-angle: -5deg;
@@ -52,6 +139,8 @@ section {
     inset: 0; /* top, right, bottom, left shorthand */
     transform: skewY(var(--skew-angle)); /* skew significa 'inclinare' */
 }
+
+/* Spikes Background */
 
 .spikes {
     --spike-color: var(--body-bg);
@@ -86,6 +175,8 @@ section {
     transform: rotate(.5turn);
 }
 
+/* Wavy Background */
+
 .wavy {
     background: linear-gradient(to right, #00f260, #0575e6);
     /* Mask created with https://css-generators.com/wavy-shapes/ */
@@ -96,4 +187,142 @@ section {
         radial-gradient(55.34px at 50% calc(100% + 46.50px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
     -webkit-mask: var(--mask);
             mask: var(--mask);
+}
+
+/* SVG Mask */
+
+.svg-section {
+    background-color: aliceblue;
+}
+
+.svg-container {
+    width: 100%;
+    height: 1000px;
+
+    background: url(./fluid.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    -webkit-mask-image: url('./woman.svg');
+    -webkit-mask-position: center -50%;
+    -webkit-mask-clip: no-clip;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 1400px; 
+}
+
+
+/* Circle Person Animation */
+
+.person-container {
+
+    aspect-ratio: 1 / 1.5; /* Il contenitore ha la grandezza di un rettangolo la cui base è 1 */
+    display: grid;
+    align-items: end;
+    border-radius: 0 0 100vw 100vw;
+    overflow: hidden;
+
+    transition: transform var(--transform-speed) ease-in-out;
+}
+
+.person-container:hover {
+    transform: scale(1.1); /* Al passaggio su il contenitore principale, la sua grandezza aumenta*/
+}
+
+.person {
+    --transform-speed: 350ms;
+
+    position: relative;
+    max-width: 15rem; /* Grandezza massima per il contemnitore del cerchio e della persona*/
+    margin-inline: auto; /* Posiziona il contenitore nel centro di person-container */
+}
+
+.person-circle {
+    position: absolute; /* La posizione del cerchio si relaziona al contanitore person*/
+    inset: auto 0 0; /* top: Auto (default); right: 0; bottom: 0; left: 0; */
+    margin-inline: auto; /* il cerchio è al centro di person */
+    
+    width: 100%; 
+    aspect-ratio: 1 / 1; /* La grandezza del box deve essere un quadrato per poi diventare un cerchio*/
+    
+    object-fit: cover; /* L'immagine di sfondo ricopre l'intero box */
+    border-radius: 50%;
+}
+
+.person-img {
+    max-width: 13rem; /* Grandezza massima del personaggio */
+
+    position: relative; /* Utile solo se si vuole spostare l'immagine della persona*/
+    z-index: 2;
+
+    transform: scale(1.3); /* aumentiamo la grandezza dell'immagine della persona, direttamente con transform */
+    transition: transform var(--transform-speed);
+}
+
+.person-container:hover .person-img { 
+    /* Al passaggio del mouse sopra il person-container, 
+    l'immagine della persona si ingrandisce e si sposta sull'asse Y*/
+    transform: scale(1.3) translateY(-1.5rem);
+}
+
+
+/* Apple Style */
+
+.apple {
+    width: 80%;
+    height: auto;
+
+    margin-inline: auto;
+    border-radius: 18px;
+
+    color: var(--apple-color);
+    background-color: white;
+
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 300;
+    letter-spacing: -0.022em;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.apple-up {
+    padding: 2rem;
+}
+
+.apple-up h2 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.apple-up p {
+    text-align: center;
+    font-weight: 300;
+    font-style: normal;
+
+    padding: 2rem;
+}
+
+.apple-up li {
+    text-align: center;
+    list-style-type: none;
+}
+
+.button-link {
+    color: white;
+    background-color: var(--apple-color);
+    
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+
+    text-decoration: none;
+
+}
+
+.apple-container-img {
+    width: 100%;
+}
+
+.apple-img {
+    object-fit: cover;
+    border-radius: 0 0 18px 18px;
 }
