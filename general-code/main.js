@@ -1,4 +1,4 @@
-import { toggleHiddenElement, changeToFunkyColor } from './resources/modules/module.js';
+import { toggleHiddenElement, changeToFunkyColor } from '../resources/modules/module.js';
 
 const buttonElement = document.getElementById('secret-button');
 const pElement = document.getElementById('secret-p');

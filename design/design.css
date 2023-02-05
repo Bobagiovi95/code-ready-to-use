@@ -28,6 +28,7 @@ body {
 
 section {
     padding-block: 5rem;
+    position: relative;
 }
 
 img {
@@ -325,4 +326,98 @@ header {
 .apple-img {
     object-fit: cover;
     border-radius: 0 0 18px 18px;
+}
+
+/* Animazione SVG */
+
+.svg-animation {
+    height: 50vh;
+    margin-bottom: 10rem;
+}
+
+#Giovanni {
+    width: 80%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#Giovanni path {
+    fill: none;
+    animation: fill 0.5s ease forwards 3.5s;
+}
+
+
+#Giovanni path:nth-child(1) {
+    stroke-dasharray: 816;
+    stroke-dashoffset: 816;
+    animation: line-anim 2s ease forwards;
+}
+#Giovanni path:nth-child(2) {
+    stroke-dasharray: 609;
+    stroke-dashoffset: 609;    
+    animation: line-anim 2s ease forwards 0.3s;
+}
+
+#Giovanni path:nth-child(3) {
+    stroke-dasharray: 645;
+    stroke-dashoffset: 645;
+    animation: line-anim 2s ease forwards 0.6s;
+}
+
+#Giovanni path:nth-child(4) {
+    stroke-dasharray: 555;
+    stroke-dashoffset: 555;
+    animation: line-anim 2s ease forwards 0.9s;
+}
+
+#Giovanni path:nth-child(5) {
+    stroke-dasharray: 764;
+    stroke-dashoffset: 764;
+    animation: line-anim 2s ease forwards 1.2s;
+}
+
+#Giovanni path:nth-child(6) {
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    animation: line-anim 2s ease forwards 1.5s;
+}
+
+#Giovanni path:nth-child(7) {
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    animation: line-anim 2s ease forwards 1.8s;
+}
+
+#Giovanni path:nth-child(8) {
+    stroke-dasharray: 608.5;
+    stroke-dashoffset: 608.5;
+    animation: line-anim 2s ease forwards 2.1s;
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes stroke {
+    from {
+        stroke: #fff;
+    }
+    to {
+        stroke: url('#myGradient'); 
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: red;
+    }
+
+    to {
+        fill: white;
+    }
 }
