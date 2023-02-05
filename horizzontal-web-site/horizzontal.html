@@ -7,6 +7,7 @@
     <title>Horizzontal Website</title>
 
     <link rel="stylesheet" href="horizzontal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="horizzontal.js" defer></script>
 </head>
 <body>
@@ -15,11 +16,28 @@
   
 <div class="container"> 
 
-    <div id="main-page" class="section">Main page</div>
+    <header class="side-nav">
+        <span onclick="openNav()" class="openbtn"> open
+        </span>
+        <nav id="nav">
+            <ul>
+                <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+                <li><a href="">home</a></li>
+                <li><a href="">about me</a></li>
+                <li><a href="">portfolio</a></li>
+                <li><a href="">contacts</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div id="pageOne" class="section">Page 1</div>
-    <div id="pageTwo" class="section">Page 2</div>
-    <div id="pageThree" class="section">Page 3</div>
+        <!-- Main Page -->
+        <section id="main-page">
+            <p class="run" onmouseover="run()">Non mi toccare..</p>
+        </section>
+        <section id="page-one">Page 1</section>
+        <section id="page-two">Page 2</section>
+        <section id="pagee-hree">Page 3</section>
+
 
 </div>
     
