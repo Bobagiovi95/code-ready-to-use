@@ -17,18 +17,34 @@ function closeNav(){
     document.getElementById('nav').style.opacity = "0";
 }
 
+/* Run animation, da risolvere.*/
 
 function run(){
     let run = document.getElementsByClassName('run')[0];
-    let randomNumber = (Math.random() * 50);
+    let randomNumber = (Math.random() * 100);
     
-    if (randomNumber > 10) {
-        randomPosition = randomNumber +'em';
-    } else {
-        randomPosition += 10;
-    }
+    let randomPosition = (100 + 'vw') - (randomNumber + 'vw');
 
-    run.style.left = randomPosition;
-    run.style.top = randomPosition;
-    run.style.transition = "2s ease";
+
+    run.style.transform = `translateX(${randomPosition}) translateY(${randomPosition})`;
+}
+
+/* Modal Open and Close */
+const modal = document.querySelector('#modal');
+const openModalButton = document.querySelector('.open-modal');
+const closeModalButtom = document.querySelector('.close-modal');
+
+openModalButton.addEventListener('click', openModal);
+closeModalButtom.addEventListener('click', closeModal);
+
+function openModal(){
+    modal.showModal();
+}
+
+function closeModal(){
+    modal.setAttribute('closing', "");
+    modal.addEventListener('animationend', ()=>{
+        modal.removeAttribute('closing');
+        modal.close();
+    }, {once: true});
 }
