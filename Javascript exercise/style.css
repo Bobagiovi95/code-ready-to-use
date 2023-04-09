@@ -1,3 +1,9 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+} /* Migliora l'effetto del gradiente */
+
 *,
 *:after,
 *:before {
@@ -14,6 +20,11 @@ body {
     color: white;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 header {
@@ -142,13 +153,56 @@ select {
 .text-cntr {
     width: 40%;
     margin: 100vh auto;
+    color: white;
+    background-color: #d6e52eb8;
+    padding: 2em;
+    border-radius: 2em;
+
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 2s ease-in-out;
+    transition: all 1.2s ease-in-out;
+}
+
+.text-cntr::before,
+.text-cntr::after {
+    content: '';
+    position: absolute;
+    inset: 0.5rem;
+    z-index: -1;
+    background: conic-gradient(
+        from var(--gradient-angle), 
+        #ff8a00, 
+        #e52e71,
+        #ffd500, 
+        #e52e71,
+        #ff8a00);
+    border-radius: inherit;
+    animation: rotation 10s linear infinite;
+}
+
+@keyframes rotation {
+    0% { --gradient-angle: 0deg}
+    100% { --gradient-angle: 360deg}
+}
+
+.text-cntr::after {
+    filter: blur(3.5rem);
 }
 
 .text-magic {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.pika-animation {
+    width: 10%;
+    transform: translateX(-150vw);
+    transition: all 1s ease;
+}
+
+.pika-lastposition {
+    margin: 0 auto 50vh;
+    transform: translateX(0);
 }

@@ -153,3 +153,18 @@ function magicText() {
 }
 
 window.addEventListener('scroll', magicText);
+
+
+// pika animation
+
+function slideIn() {
+    const pikaContainer = document.querySelector('.pika-animation');
+    const textDistance = pikaContainer.getBoundingClientRect().top;
+    let screenHeight = window.innerHeight / 2;
+
+    if(textDistance < screenHeight) {
+        pikaContainer.classList.add('pika-lastposition');
+    }
+}
+
+window.addEventListener('scroll', slideIn);
