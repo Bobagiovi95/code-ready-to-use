@@ -5,8 +5,4 @@
 1. *Copy* the code you want to use
 2. **Paste** it in your project!
 
-> TEST
-
-:)
-
-;)
+> This is just a TEST for personal purpose.

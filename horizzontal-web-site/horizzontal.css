@@ -1,0 +1,273 @@
+*,
+*:after,
+*:before {
+    margin: 0; 
+    padding: 0; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+} 
+
+:root {
+  --black: #1a1a1a;
+}
+
+body {
+  /* cursor: none; */
+  /* scroll-behaviour: smooth; */
+  background-color: #f9fafb;
+  font-family: 'Manrope' , sans-serif;
+  /* font-feature-settings: "palt","calt","liga";
+  font-variation-settings: "wght" 400; */
+  /* text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none; */
+  
+}
+
+.scroll {
+  position: absolute;
+  height: 5px;
+  width: 0;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  padding-left: 5rem;
+  
+  overflow-x: scroll;
+  /* scroll-snap-type: x mandatory;  Non funziona.. */
+
+  display: flex;
+
+}
+
+section {
+  flex: none;
+  
+  width: 100vw;
+  height: 100vh;
+
+  /* scroll-snap-align: start; */
+  /* scroll-margin-left: 5em; */
+}
+
+.button {
+  height: fit-content;
+  padding: 1em 1.5em;
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+/* Side-Nav */
+
+.side-nav {
+  width: 5em;
+  height: 100vh;
+
+  background-color: #f9fafb;
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  transition: 0.8s linear;
+}
+
+.side-nav nav {
+
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  opacity:  0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.side-nav nav ul li {
+  list-style-type: none;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.side-nav nav ul li a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.openbtn {
+  right: 1em;
+  writing-mode: vertical-rl;
+}
+
+.openbtn:hover {
+  cursor: pointer;
+}
+
+.side-nav svg {
+  margin-inline: 2px;
+  fill: none;
+  stroke: rgba(26, 26, 26, 0.8);
+  stroke-width: 5px;
+  border-radius: 50%;
+}
+
+#main-page {
+    background: cadetblue;
+}
+
+
+.run {
+  position: relative;
+  padding: 2em;
+
+  font-size: 2em;
+}
+
+
+@keyframes return {
+  to {
+    position: relative;
+ 
+  }
+}
+
+/* Page One */
+
+#page-one {
+    background-color:cornflowerblue;
+    position: relative;
+}
+
+.click-me {
+  padding: 1rem 4em;
+  border-radius: 4px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background-color: #f9fafb;
+  animation: rotate 5s infinite ease-in-out;
+}
+
+.line {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+
+  width: 0%; 
+
+  border: 3px solid #1d1d1f;
+  animation: grow 10s infinite ease-in-out;
+}
+
+.ball {
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 2em;
+  background: crimson;
+  animation: 3s slide-in linear 0s 2 alternate;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100vw - 200px));
+  }
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  20% {transform: rotate(0deg);}
+  40% {transform: rotate(10deg);}
+  60% {transform: rotate(-10deg);}
+  80% {transform: rotate(0deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes grow {
+    0% {width: 0%; opacity: 1;} 
+    50% {width: 90%; opacity: 1;} 
+    60% {width: 90%; opacity: 0;}
+    100% {width: 90%; opacity: 0;}
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;} 
+    100% {opacity: 1;}
+}
+
+@keyframes fade-out {
+    0% {opacity: 1;} 
+    100% {opacity: 0;}
+}
+
+/* Page Two */
+
+#page-two {
+    background-color: coral;
+    display: flex;
+}
+
+.modal {
+  width: 20vw;
+  padding: 1em;
+  border: 0;
+  margin: auto;
+  box-shadow: 0 0 1em #1d1d1f, 0 0 100vw rgba(0 0 0 / .5);
+
+
+  text-align: center;
+}
+
+/* .modal::backdrop {
+  background: linear-gradient(45deg, cadetblue, coral);
+} */
+
+.modal[open]{
+  animation: 500ms fade-in forwards, 1s slide-up forwards;
+}
+
+.modal[open]::backdrop {
+  animation: 500ms fade-in forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.modal[closing] {
+  display: block;
+  pointer-events: none;
+  inset: 0;
+  animation: 500ms fade-out forwards;
+}
+
+.modal[closing]::backdrop {
+  animation: 500ms fade-out forwards;
+}
+
+.button.open-modal {
+  margin: auto;
+}
+
+#page-three {
+    background-color: pink;
+}
