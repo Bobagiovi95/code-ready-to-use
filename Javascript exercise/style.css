@@ -1,0 +1,154 @@
+*,
+*:after,
+*:before {
+        margin: 0; 
+        padding: 0; 
+        -webkit-box-sizing: border-box; 
+        -moz-box-sizing: border-box; 
+        box-sizing: border-box;
+} 
+ 
+
+body {
+    background-image: linear-gradient(to right, #ff8800c2, #d6e52eb8);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 1.5em;
+}
+
+header,
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    background: white;
+}
+
+form button {
+    color:#ff8800c2;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e5562eb8;
+    color: white;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li {
+    flex: 1;
+}
+
+.delete-button, .completed-button {
+    background: #e5562eb8;
+    color: white;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.completed-button {
+    background: greenyellow;
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash-can, 
+.fa-check {
+    pointer-events: none; /* Toglie il problema del click sul pulsante delete*/
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    color: #ff3700c2;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background: #e5562eb8;
+    top: 0;
+    right: 0;
+    padding: 0.9rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after {
+    background: white;
+    color: #ff8800c2;
+}
+
+
+.text-cntr {
+    width: 40%;
+    margin: 100vh auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 2s ease-in-out;
+}
+
+.text-magic {
+    opacity: 1;
+    transform: translateY(0);
+}
